@@ -1,0 +1,8 @@
+/readQrFromUrl?id=1&url=https:/gir.st/blog/img/greenpass-demo.png&dataNeeded=all
+/readQrFromUrl?id=1&url=https:/gir.st/blog/img/greenpass-demo.png&dataNeeded=raw
+
+
+TODO : 
+- Local file with path
+- Url encode filePath et Url decode à faire
+- Envoi d'une image par Http
