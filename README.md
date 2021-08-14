@@ -10,24 +10,30 @@ Decode GreenPass allows you to decode Green Pass documents (QR Code and 2D Codes
 
 ## API usages
 
-### Using the GET API readQrFromUrl
+### Using the GET API 'readQrFromUrl'
 If the file containing the code to decode is already stored (HTTPS / CDN or local HTTP server), then the easiest way to use the API is the GET API.
 Here are the parameters used by the API
-- `id` : refers to any id from the system using the API, will be provided "untouched" in the result
+- `sessionId` : refers to any id from the system using the API, will be provided "untouched" in the result
 - `url` : fullpath to image containing the QrCode (JPG / PNG / GIF formats only) / Url should be encoded
 - `dataNeeded` : should be set to 'raw' or 'all' (lowercase only). 
   - When set to 'raw', result will contain raw content of QR Code (or 2D-Code)
   - When set to 'all', result will contain decoded content of QR Code (or 2D-Code)
 
 #### Example
-- /readQrFromUrl?id=1&url=https://gir.st/blog/img/greenpass-demo.png&dataNeeded=all
+- /readQrFromUrl?sessionId=1&url=https://gir.st/blog/img/greenpass-demo.png&dataNeeded=all
 
 #### Limitations so far on GET API
 - url parameter should be "clean" and should not be URL encoded yet -> bug fix to come soon
 - 2D-Code with "all" option not yet implemented -> to be improved soon (however 2D Code with 'raw' parameter works fine)
 
-### Using the POST API
-Not implemented yet on Glitch / works only on local installs due to Glitch limitations
+### Using the POST API 'decode'
+You can use the POST API
+Here are the parameters used by the API
+- `UserId` : refers to any id from the system using the API, will be provided "untouched" in the result
+- `buffer` : image content containing the QrCode (see sample)
+- `dataNeeded` : should be set to 'raw' or 'all' (lowercase only). 
+  - When set to 'raw', result will contain raw content of QR Code (or 2D-Code)
+  - When set to 'all', result will contain decoded content of QR Code (or 2D-Code)
 
 
 

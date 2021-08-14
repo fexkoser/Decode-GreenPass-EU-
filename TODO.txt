@@ -1,0 +1,5 @@
+- Uniformiser le nom des paramètres entre le POST et le GET
+- Faire des tests unitaires avec JEST
+- Récupérer les fichiers de test de Martin
+- Tester les APIs avec Postman
+- Mettre les JSONSchema sur l'API POST
