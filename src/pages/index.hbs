@@ -34,18 +34,22 @@
       The image above will be decoded is the following if you click on the link below:
     </p>
     <p>
-      <a href="./readQrFromUrl?id=1&url=https:/gir.st/blog/img/greenpass-demo.png&dataNeeded=all">
+      <a href="./readQrFromUrl?sessionId=1&url=https:/gir.st/blog/img/greenpass-demo.png&dataNeeded=all">
         Your First Decode Green Pass with Url encoded
       </a>
     </p>
     
+    <h2>
+      Use form below to upload your "own" greenpass 
+    </h2>
+
     <form action="/decode" method="post" enctype="multipart/form-data">
         Select image to upload:
         <label for="file">Upload a QR code</label> </br>
         <input type="file" name="greenpasscode" id="fileToUpload"><br>
         <input type="radio" name="dataNeeded" value="raw" checked> raw
         <input type="radio" name="dataNeeded" value="all"> all<br>
-        <input type="number" name="UserId" id="id" min="1"> id <br>
+        <input type="number" name="sessionId" id="id" min="1"> id <br>
         <input type="submit" value="Upload Image" name="submit">
     </form>
         
