@@ -1,5 +1,3 @@
-- Faire le 2D Code
 - Faire des tests unitaires avec JEST
 - Récupérer les fichiers de test de Martin
-- Tester les APIs avec Postman
 - Mettre les JSONSchema sur l'API POST
