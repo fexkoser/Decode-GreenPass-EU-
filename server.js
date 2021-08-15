@@ -142,7 +142,7 @@ fastify.route({
       if (dataNeeded == "raw") {
         reply.send({
           sessionId: sessionId,
-          response: decodedUrl
+          raw: decodedUrl
         });
       }
       if (dataNeeded == "all") {
@@ -167,14 +167,15 @@ fastify.route({
         } else {
           reply.send({
             sessionId: sessionId,
-            response: await twoddoc.parse(decodedUrl)
+            data: await twoddoc.parse(decodedUrl),
+            raw: decodedUrl
           });
           
         }
       } else {
         reply.send({
           sessionId: sessionId,
-          response: decodedUrl
+          raw: decodedUrl
         });
       }
     }
@@ -326,7 +327,7 @@ fastify.get("/readQrFromUrl", getOptions, async (request, reply) => {
     if (dataNeeded == "raw") {
       return {
         sessionId: sessionId,
-        response: decodedUrl
+        raw: decodedUrl
       };
     }
     if (dataNeeded == "all") {
@@ -352,7 +353,8 @@ fastify.get("/readQrFromUrl", getOptions, async (request, reply) => {
       } else {        
         reply.send({
             sessionId: sessionId,
-            response: await twoddoc.parse(decodedUrl)
+            data: await twoddoc.parse(decodedUrl),
+            raw: decodedUrl
           });
       }
     }
